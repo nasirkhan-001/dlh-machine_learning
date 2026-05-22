@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
+"""Module that calculates the determinant of a matrix."""
+
+
 def determinant(matrix):
+    """Calculates the determinant of a matrix."""
+
     # check matrix type including rows
     if not isinstance(matrix, list):
         raise TypeError("matrix must be a list of lists")
