@@ -2,10 +2,33 @@
 """Module that calculates the minor of a matrix."""
 
 
-def minor(matrix):
-    """Calculates the minor of a matrix."""
+def determinant(matrix):
+    """Calculates the determinant of a matrix."""
 
-    # check matrix type including rows
+    if len(matrix) == 1:
+        return matrix[0][0]
+
+    if len(matrix) == 2:
+        return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+
+    det = 0
+    for j in range(len(matrix)):
+        smaller = []
+        for r in range(1, len(matrix)):
+            small_row = []
+            for c in range(len(matrix)):
+                if c != j:
+                    small_row.append(matrix[r][c])
+            smaller.append(small_row)
+        sign = (-1) ** j
+        det += sign * matrix[0][j] * determinant(smaller)
+    return det
+
+
+def minor(matrix):
+    """Calculates the minor matrix of a matrix."""
+
+    # check matrix type
     if not isinstance(matrix, list):
         raise TypeError("matrix must be a list of lists")
 
@@ -36,10 +59,11 @@ def minor(matrix):
         return [[1]]
 
     # build minor matrix
-    minor = []
+    minor_matrix = []
     for i in range(len(matrix)):
         row = []
         for j in range(len(matrix)):
+            # build smaller matrix by removing row i and column j
             smaller = []
             for r in range(len(matrix)):
                 if r == i:
@@ -50,6 +74,7 @@ def minor(matrix):
                         continue
                     small_row.append(matrix[r][c])
                 smaller.append(small_row)
-            row.append(smaller)
-        minor.append(row)
-    return minor
+            # get determinant of smaller matrix
+            row.append(determinant(smaller))
+        minor_matrix.append(row)
+    return minor_matrix
