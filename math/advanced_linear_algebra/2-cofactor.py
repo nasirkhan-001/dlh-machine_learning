@@ -95,9 +95,10 @@ def cofactor(matrix):
         return [[1]]
 
     cofact_matrix = []
-    for i in range(len(matrix)):
+    min_matrix = minor(matrix)
+    for i in range(len(min_matrix)):
         row = []
-        for j in range(len(matrix)):
-            row.append((-1) ** (i + j) * minor(matrix))
+        for j in range(len(min_matrix)):
+            row.append((-1) ** (i + j) * min_matrix[i][j])
         cofact_matrix.append(row)
     return cofact_matrix
