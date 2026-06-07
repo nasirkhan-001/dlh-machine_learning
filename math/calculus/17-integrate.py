@@ -9,9 +9,6 @@ def poly_integral(poly, C=0):
         return None
     if not isinstance(C, int):
         return None
-    for element in poly:
-        if not isinstance(element, (int, float)):
-            return None
 
     # integration of constant fixed at zero rather 5x, 2x ..x etc
     new_poly = [C]
