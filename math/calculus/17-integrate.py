@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Module calculates the derivative of polynomial"""
+"""Module calculates the integral of polynomial"""
 
 
-def poly_derivative(poly):
+def poly_integral(poly, C=0):
     """this is documentation to finding coefficient of derivation for polynomial."""
 
     if not isinstance(poly, list) or len(poly) == 0:
