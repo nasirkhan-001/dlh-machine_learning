@@ -3,7 +3,7 @@
 
 
 def poly_integral(poly, C=0):
-    """this is documentation to finding coefficient of derivation for polynomial."""
+    """integral coefficient = add 1 to power → divide by new power."""
 
     if not isinstance(poly, list) or len(poly) == 0:
         return None

@@ -3,7 +3,7 @@
 
 
 def poly_derivative(poly):
-    """this is documentation to finding coefficient of derivation for polynomial."""
+    """Derivation coefficient as list, bring down power and multiply → reduce original power by 1."""
 
     if not isinstance(poly, list) or len(poly) == 0:
         return None
