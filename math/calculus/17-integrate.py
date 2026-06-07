@@ -13,8 +13,12 @@ def poly_integral(poly, C=0):
         if not isinstance(element, (int, float)):
             return None
 
-    # integration of function above constant
+    # integration of constant fixed at zero rather 5x, 2x ..x etc
     new_poly = [C]
     for i in range(len(poly)):
-        new_poly.append(poly[i] / (i + 1))
+        value = (poly[i] / (i + 1))
+    # integral coeff if whole number and it must be without decimal
+        if value == int(value):
+            value = int(value)
+        new_poly.append(value)
     return new_poly
