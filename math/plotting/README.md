@@ -1,0 +1,2 @@
+Plotting Learning Objectives:
+Project focus on plotting, it types like scatter plot, line graph, bar graph, and histogram.It also covered matplotlib and how to plot data with matplotlib.Further, How to label a plot and scale an axis.How to plot multiple sets of data at the same timee file for plotting directory
