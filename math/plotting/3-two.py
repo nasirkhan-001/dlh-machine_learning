@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Module that plots y wrt x as aline graph"""
+"""Module that plots y as a scatter graph"""
 import numpy as np
 import matplotlib.pyplot as plt
 
 
 def change_scale():
-    "this is documentation for change scale function."
+    """use value of x to plot y as a scatter graph"""
     x = np.arange(0, 28651, 5730)
     r = np.log(0.5)
     t = 5730
