@@ -11,7 +11,3 @@ def line():
     plt.xlim(0, 10)
     plt.plot(y, 'r-')
     plt.show()
-    plt.savefig('plot.png')
-
-
-line()
