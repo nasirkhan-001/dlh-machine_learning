@@ -7,6 +7,8 @@ class Poisson:
     # if data is given, the lambtha is calculated from data,
     # else it is given by the user, by default it is 1.0
     # lambtha is the expected number of occurrences in a given time frame
+    # no of fraudulent transaction/day, no of customer default/month
+    # and expected transaction/next-day, default/next-month
     def __init__(self, data=None, lambtha=1.):
         """constructor method."""
         # attaching data to object "self or P1, P2 per checker file"

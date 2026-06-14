@@ -5,8 +5,13 @@
 class Exponential:
     """This class represents an exponential distribution"""
     # if data is given, the lambtha is calculated from data,
-    # else it is given by the user, by default it is 1.0
-    # lambtha is the expected number of occurrences in a given time frame
+    # else it will be provided by the user, by default it is 1.0
+    # lambtha is the rate: event/time for exponential SF 
+    # time matter in this distribution and its a continous random variable
+    # e.g. waiting time for call, bus, failure, fall, increase
+    # so your waiting for the next event to happens, that why decay -lambdha matter
+    # whats the probability that next emails will arive in 10mins
+    # lambdha = 5 emails (Event) / next hour (time)
     def __init__(self, data=None, lambtha=1.):
         """constructor method."""
         # attaching data to object "self or P1, P2 per checker file"
@@ -53,7 +58,7 @@ class Exponential:
             # loop for factorial calculation, starting from 1 to k
             for i in range(1, k + 1):
                 factorial *= i
-            pmf = (e ** (-self.lambtha) * (self.lambtha ** k)) / factorial
+            exp = (e ** (-self.lambtha) * (self.lambtha ** k)) / factorial
             return pmf
 
     def cdf(self, k):
