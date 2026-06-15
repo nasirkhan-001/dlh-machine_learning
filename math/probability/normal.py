@@ -10,11 +10,6 @@ class Normal:
     # σ is std deviation, μ is mean of popultion rather sample
     # ND is symmetric means cut into equal half
     # In ND mean = median = mode
-    # pdf ==> f(x) = 1/σ√2π * e ^ −(x−μ)^2 / 2σ^2
-    # pdf = how popultion distributed densely around specific value
-    # value = continous random variable
-    # pdf = likelohood or dansity and not probability
-    # for proabability, there is another formula
     # cdf = will be from z-score table
     # cdf accumulated probability from left to x continous random value
     # z-score, used to find area under bell curve for given variable
@@ -73,3 +68,20 @@ class Normal:
         # x = μ + zσ
         x = self.mean + z * self.stddev
         return x
+
+    def pdf(self, x):
+        """calcualte dansity function for normal distribution."""
+        # pdf ==> f(x) = 1/σ√2π * e ^ −(x−μ)^2 / 2σ^2
+        # pdf = how popultion distributed densely around specific value
+        # value = continous random variable
+        # pdf = likelohood or dansity and not probability
+        # for proabability, there is another formula
+        # PDF(90) tells how densely stock prices are clustered around 90
+        # not the probability of being exactly 90
+        # pdf does not tell probability which is area under curve
+        π = 3.1415926536
+        e = 2.7182818285
+        coefficient = 1 / (self.stddev * (2 * π) ** 0.5)
+        exponent = e ** (-((x - self.mean) ** 2) / (2 * (self.stddev ** 2)))
+        pdf = coefficient * exponent
+        return pdf

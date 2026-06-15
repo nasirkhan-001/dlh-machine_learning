@@ -20,3 +20,12 @@ print()
 print('Z(90):', n2.z_score(90))
 print('X(2):', n2.x_value(2))
 
+# task.8
+n1 = Normal(data)
+print('PSI(90):', n1.pdf(90))
+# PDF(90) tells how “dense” or “concentrated” the stock prices are around 90
+# How likely is the stock price to be around 90
+
+n2 = Normal(mean=70, stddev=10)
+print('PSI(90):', n2.pdf(90))
+
