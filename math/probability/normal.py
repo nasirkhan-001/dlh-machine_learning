@@ -6,8 +6,7 @@ class Normal:
     """This class represents an normal distribution"""
     def __init__(self, data=None, mean=0., stddev=1.):
         """constructor method."""
-        # if data is given, the lambtha is calculated from data,
-        # else it will be provided by the user
+        # std deviation is spread or width
         # in simple normal distribution variable P(x) = N(σ,μ)
         # σ is std deviation, μ is mean of popultion rather sample
         # ND is symmetric means cut into equal half

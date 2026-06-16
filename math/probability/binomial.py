@@ -6,23 +6,12 @@ class Bionomial:
     """This class represents an binomial distribution"""
     def __init__(self, data=None, n=1, p=0.5):
         """constructor method."""
+        # p is prob of success, and it must be btw 0 to 1
+        # n is no of trail, and it must be integer not float
         # if data is given, the lambtha is calculated from data,
         # else it will be provided by the user, by default lambdha is 1.0
-        # in simple normal distribution variable P(x) = N(σ,μ)
-        # σ is std deviation, μ is mean of popultion rather sample
-        # ND is symmetric means cut into equal half
-        # In ND mean = median = mode
-        # cdf = will be from z-score table
-        # cdf accumulated probability from left to x continous random value
-        # z-score, used to find area under bell curve for given variable
-        # z-score = (x - μ) / σ
-        # 68-95-99.7% rule
-        # when σ = 1, means move 1 std from mean (left/right)
-        # this area under bell curve will represent 68% of population
-        # if we travel 2 std.dev from means and so on.......
-        # e.g. daily stock returns in USD for one month
-        # how likely they are around average is e.g of PDF-ND
-        # probabiltiy that returns of stock will be below threshold - CDF
+        # binomial distribution works when random variable are continous
+        # in nature and events are indpendent from each other
         self.data = data
         self.mean = float(mean)
         self.stddev = float(stddev)
