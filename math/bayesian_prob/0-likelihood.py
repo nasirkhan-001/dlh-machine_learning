@@ -5,9 +5,9 @@ import numpy as np
 
 def likelihood(x, n, P):
     "find likelihood of patients taking drugs result in severe side effects."
-    if n <= 0:
+    if not isinstance(n, int):
         raise ValueError("the message n must be a positive integer")
-    if not x >= 0:
+    if not isinstance(x, int):
         raise ValueError("x must be an integer and greater than or == 0")
     if x > n:
         raise ValueError("x cannot be greater than n")
