@@ -4,7 +4,7 @@
 
 def fill(df):
     """Function that fill empty cells in row and column of DF."""
-    df = df.drop(['Weighted_Price'])
+    df = df.drop(['Weighted_Price'], axis=1)
     df['Close'] = df['Close'].ffill()
     df[['High', 'Low', 'Open']] = df[[
         'High', 'Low', 'Open']].fillna(df['Close'])
