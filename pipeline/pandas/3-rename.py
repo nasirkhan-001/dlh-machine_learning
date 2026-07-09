@@ -13,7 +13,7 @@ def rename(df):
     # level is to rename the index of a MultiIndex DataFrame
     # errors is to handle raise them or ignore them upon changes in
     # in DF, and by default it ignores errors
-    df = df.rename(columns={'Timestamp': 'Datetime})
+    df = df.rename(columns={'Timestamp': 'Datetime'})
     df['Timestamp'] = pd.to_datetime(df['Timestamp'], unit='s')
     df = df[['Datetime', 'Close']]
     return df
